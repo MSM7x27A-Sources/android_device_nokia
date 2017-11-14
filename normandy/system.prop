@@ -31,13 +31,6 @@ ro.ril.telephony.mqanelements=5
 # NETWORK_MODE: 3 = GSM/WCDMA (auto mode, according to PRL)
 ro.telephony.default_network=3
 
-# Fix Sim slot
-ro.ril.delay_0=1
-ro.ril.delay_1=2
-
-# Ril log
-ro.ril.extlog=1
-
 # CDMA subscription: 0 = RUIM, 1 = NV
 ro.telephony.default_cdma_sub=0
 
@@ -96,9 +89,6 @@ ro.vold.umsdirtyratio=30
 
 # WiFi Atheros 600x
 wifi.interface=eth0
-ro.confg.hw_appfsversion=d9V4_4_SYSIMG
-ro.confg.hw_appsbootversion=d9V4_4_APPSBOOT
-ro.confg.hw_appversion=d9V4_4_KERNEL
 
 # FM Radio
 ro.fm.analogpath.supported=false
