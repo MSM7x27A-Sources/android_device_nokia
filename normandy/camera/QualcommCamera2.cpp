@@ -64,7 +64,7 @@ static hw_module_t camera_common  = {
   version_major: 0,
   version_minor: 01,
   id: CAMERA_HARDWARE_MODULE_ID,
-  name: "JSR msm7x27a Camera HAL",
+  name: "Weritos msm7x27a Camera HAL",
   author:"Qcom",
   methods: &camera_module_methods,
   dso: NULL,
