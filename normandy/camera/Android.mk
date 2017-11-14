@@ -6,6 +6,8 @@ ifeq ($(USE_DEVICE_SPECIFIC_CAMERA),true)
 
 include $(CLEAR_VARS)
 
+LOCAL_CLANG := false
+
 # When zero we link against libmmcamera; when 1, we dlopen libmmcamera.
 DLOPEN_LIBMMCAMERA := 1
 

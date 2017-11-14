@@ -33,7 +33,7 @@ int bt_hardware_power(bool enable)
 {
 	char *value = enable ? "1" : "0";
 
-	if (bt_hardware_power_state_path == NULL)
+	if (!bt_hardware_power_state_path[0])
 		return -1;
 
 	write_value(bt_hardware_power_state_path, value, 1);

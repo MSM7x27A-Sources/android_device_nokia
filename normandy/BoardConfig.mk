@@ -104,9 +104,6 @@ BOARD_DATA_FILESYSTEM_OPTIONS := rw
 # Dalvik
 TARGET_ARCH_LOWMEM := true
 
-# Charger
-BOARD_CHARGER_SHOW_PERCENTAGE := true
-
 # Low RAM settings
 MALLOC_IMPL := dlmalloc
 TARGET_BOOTANIMATION_HALF_RES := true
@@ -126,6 +123,10 @@ AUDIO_FEATURE_ENABLED_PROXY_DEVICE := false
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/nokia/normandy/bluetooth
+
+# Charger
+BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
+BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # GPS
 QCOM_GPS_PATH := hardware/qcom/gps
@@ -153,7 +154,6 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 # Other
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
-BOARD_CHARGER_ENABLE_SUSPEND := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 BOARD_WANTS_EMMC_BOOT := true
 
@@ -275,8 +275,11 @@ ifeq ($(HOST_OS),linux)
     endif
   endif
 endif
-WITH_DEXPREOPT_PIC := true
+WITH_DEXPREOPT_PIC := false
 DONT_DEXPREOPT_PREBUILTS := true
+
+# Build
+USE_CLANG_PLATFORM_BUILD := true
 
 # Final ZIP type
 BLOCK_BASED_OTA := false

@@ -5,8 +5,8 @@ add_lunch_combo lineage_normandy-eng
 add_lunch_combo lineage_normandy-userdebug
 add_lunch_combo lineage_normandy-user dist
 
-#sh device/nokia/normandy/patches/apply.sh
-#croot
+sh device/nokia/normandy/patches/apply.sh
+croot
 
 rm -rf out/target/product/normandy/obj/PACKAGING/target_files_intermediates
 rm -f out/target/product/normandy/system/build.prop

@@ -16,6 +16,13 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
+$(call inherit-product, vendor/nokia/common-vendor.mk)
+
+$(call inherit-product, vendor/nokia/nokia-vendor.mk)
+
+PRODUCT_DEX_PREOPT_DEFAULT_FLAGS := --compiler-filter=interpret-only
+$(call add-product-dex-preopt-module-config,services,--compiler-filter=space)
+
 # The GPS configuration appropriate for this device.
 #$(call inherit-product, device/common/gps/gps_eu_supl.mk)
 
@@ -25,9 +32,6 @@ PRODUCT_AAPT_CONFIG := normal hdpi
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 PRODUCT_TAGS += dalvik.gc.type-precise
-
-# ViewMem 
-PRODUCT_PACKAGES += viewmem
 
 # Config Files
 PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/nokia/normandy/system,system)
@@ -59,6 +63,7 @@ PRODUCT_PACKAGES += copybit.msm7x27a
 PRODUCT_PACKAGES += gralloc.msm7x27a
 PRODUCT_PACKAGES += libqdMetaData
 PRODUCT_PACKAGES += memtrack.msm7x27a
+PRODUCT_PACKAGES += hwcomposer.msm7x27a
 PRODUCT_PACKAGES += libtilerenderer
 
 PRODUCT_PACKAGES += librs_jni
@@ -89,6 +94,9 @@ PRODUCT_PACKAGES += libstlport
 # Gello
 # PRODUCT_PACKAGES += Gello
 
+# Doze
+PRODUCT_PACKAGES += DozeService
+    
 # Wifi
 PRODUCT_PACKAGES += libcnefeatureconfig
 PRODUCT_PACKAGES += libwpa_client
@@ -96,6 +104,8 @@ PRODUCT_PACKAGES += hostapd
 PRODUCT_PACKAGES += dhcpcd.conf
 PRODUCT_PACKAGES += wpa_supplicant
 PRODUCT_PACKAGES += wpa_supplicant.conf
+
+PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.jit.codecachesize=0
 
 # Permissions
 PRODUCT_COPY_FILES += frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml

@@ -421,3 +421,7 @@ service geomagneticd /system/bin/geomagneticd
 
 on property:sys.boot_completed=1
     write /sys/block/mmcblk0/queue/scheduler deadline
+
+service charger /charger
+    class charger
+    seclabel u:r:healthd:s0
