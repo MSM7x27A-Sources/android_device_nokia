@@ -28,7 +28,7 @@ USE_CAMERA_STUB := false
 BOARD_VENDOR := jsr-qcom
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := x,msm_8625,normandy
+# TARGET_OTA_ASSERT_DEVICE := x,msm_8625,normandy
 
 # Compile sys
 #TARGET_GCC_VERSION_EXP := 4.8
@@ -182,6 +182,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storag
 TARGET_USE_CUSTOM_SECOND_LUN_NUM := 1
 
 # Recovery
+TARGET_NO_RECOVERY := false
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
 BOARD_SUPPRESS_EMMC_WIPE := true

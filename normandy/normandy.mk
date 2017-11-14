@@ -45,7 +45,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES +=  device/nokia/normandy/prebuilt/app/com.cyngn.cameranext.ver.2.0.003.apk:system/priv-app/Camera/com.cyngn.cameranext.ver.2.0.003.apk
 
 # Torch
-PRODUCT_PACKAGES += Torch
+# PRODUCT_PACKAGES += Torch
 
 # Packages
 PRODUCT_PACKAGES += audio.a2dp.default
@@ -87,7 +87,7 @@ PRODUCT_PACKAGES += setup_fs
 PRODUCT_PACKAGES += libstlport
 
 # Gello
-PRODUCT_PACKAGES += Gello
+# PRODUCT_PACKAGES += Gello
 
 # Wifi
 PRODUCT_PACKAGES += libcnefeatureconfig
