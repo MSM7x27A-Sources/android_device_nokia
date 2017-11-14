@@ -38,6 +38,10 @@ TARGET_SPECIFIC_HEADER_PATH := device/nokia/normandy/include
 # Compiler flags
 TARGET_GLOBAL_CFLAGS += -mtune=cortex-a5 -mfpu=neon-vfpv4 -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a5 -mfpu=neon-vfpv4 -mfloat-abi=softfp
+COMMON_GLOBAL_CFLAGS += -DUSE_LEGACY_BLOBS
+
+# Some of our vendor libs have text relocations
+TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
 # Qualcomm hardware
 BOARD_USES_QCOM_HARDWARE := true
@@ -71,7 +75,7 @@ TARGET_KERNEL_SOURCE := kernel/nokia
 TARGET_KERNEL_CONFIG := weritos_defconfig
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom vmalloc=200M androidboot.selinux=permissive hack_lcd=1 chg_hack_lcd=0
 BOARD_KERNEL_PAGESIZE := 4096
-KERNEL_TOOLCHAIN_PREFIX := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-linux-gnueabi-linaro_4.7.4-2014.06/bin/arm-eabi-
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
 #KERNEL_TOOLCHAIN_PREFIX := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.9/bin/arm-eabi-
 BOARD_KERNEL_BASE := 0x00200000
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01500000
